@@ -376,7 +376,7 @@ import sys
 ### Set the hyperparameters here ###
 iterations = 5000
 learning_rate = 0.5
-hidden_nodes = 4
+hidden_nodes = 12
 output_nodes = 1
 
 N_i = train_features.shape[1]
