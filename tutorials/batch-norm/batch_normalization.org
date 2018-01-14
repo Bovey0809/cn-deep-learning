@@ -1,0 +1,14 @@
+* tf.layer.batch_normalization
+** 使用的位置
+   - 理论上用于激活函数之前.
+   - 全连接不使用bias.
+   - 但是这个并不绝对, 有时候可以使用bias, 也可以使用在激活函数后面.
+** 参数注意事项
+   - training参数, 可以使用python的bool值, 也可以使用tf的bool值.
+** 训练注意事项
+   - 需要加上一段代码, 让graph知道这是训练的过程.
+   #+BEGIN_SRC python
+     _ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+     with tf.control_dependencies(update_ops):
+         train_op = optimizer.minimize(loss)
+   #+END_SRC
